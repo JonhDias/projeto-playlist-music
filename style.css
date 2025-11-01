@@ -86,7 +86,7 @@ h2{
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, #ff7b00, #ff0080, #6a00ff);
+  background: linear-gradient(orange, #ff69b4, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
