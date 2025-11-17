@@ -15,12 +15,12 @@ body{
 
 .container{
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur (12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);               /* CORRIGIDO */
+    -webkit-backdrop-filter: blur(12px);       /* CORRIGIDO */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -34,8 +34,7 @@ body{
 
 input{
     padding: 10px;
-    border: none;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255,255,255,0.4);
     border-radius: 8px;
     outline: none;
     color: #fff;
@@ -48,16 +47,18 @@ input::placeholder{
 
 button{
     background: rgba(255, 255, 255, 0.8);
-    color: #fff;
+    color: #000; /* MELHOR VISÍVEL */
     padding: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: bold;
 }
 
 button:hover{
     background: rgba(74, 137, 220, 1);
+    color: #fff;
 }
 
 a{
@@ -74,9 +75,10 @@ h2{
     margin-bottom: 10px;
 }
 
+/* TÍTULO SUPERIOR */
 .playlist-header {
   position: absolute;
-  top: 40px; /* controla o quão alto o título fica */
+  top: 40px;
   width: 100%;
   text-align: center;
 }
@@ -90,20 +92,12 @@ h2{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
   animation: gradientMove 5s ease infinite;
 }
 
-/* Efeito suave de movimento no degradê */
+/* ANIMAÇÃO DO DEGRADÊ */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-

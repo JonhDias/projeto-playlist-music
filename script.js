@@ -1,38 +1,18 @@
-function showRegister(){
-    document.getElementById("loginBox").classList.add("hidden");
-    document.getElementById("registerBox").classList.remove("hidden");
-}
+document.getElementById("formLogin").addEventListener("submit", function(e){
+    e.preventDefault();
 
-function showLogin(){
-    document.getElementById("registerBox").classList.add("hidden");
-    document.getElementById("loginBox").classList.remove("hidden");
-}
+    let emailDigitado = document.getElementById("emailLogin").value;
+    let senhaDigitada = document.getElementById("senhaLogin").value;
 
-function login(){
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+    let emailSalvo = localStorage.getItem("email");
+    let senhaSalva = localStorage.getItem("senha");
 
-    // Aqui estou adicionando uma verificação simples
-    if(!email || !password){
-        alert("Por favor, preencha todos os campos de login.");
-        return;
+    if (emailDigitado === emailSalvo && senhaDigitada === senhaSalva) {
+
+        // 🔥 LOGIN VALIDADO → VAI PARA HOME
+        window.location.href = "home.html";
+
+    } else {
+        alert("Email ou senha incorretos!");
     }
-
-    // Aqui eu faço a verificação com o backend (simulado)
-    alert(`Login bem-sucedido! ${email}`);
-
-}
-
-function register(){
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("resgisterPassword").value;
-
-    if(!email || !password){
-        alert("Por favor, preencha todos os campos de registro.");
-        return;
-    }
-
-    // Aqui eu faria a chamada para o backend para registrar o usuário (simulado)
-    alert(`Registro bem-sucedido! ${email}`);
-    showLogin();
-}
+});
